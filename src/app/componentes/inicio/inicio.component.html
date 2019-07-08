@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-cabezera></app-cabezera>
+<div style="text-align:center">
+    <h1>
+     {{ title }}!
+    </h1>
+    <h6>
+        Atendiendo 24 horas, los 7 días de la semana!
+    </h6>
+  </div>
+    <p>Reglas del parqueadero:</p>
+    <ul>
+        <li>
+            El parqueadero recibe carros y motos
+        </li>
+        <li>
+            El parqueadero solo puede tener 20 carros y 10 motos simultaneamente
+        </li>
+        <li>
+            Las placas que inician por la letra "A" solo pueden ingresar al parqueadero los días Domingo y Lunes, de lo contrario debe mostrar un mensaje de que no esta autorizado a ingresar.
+        </li>
+        <li>
+            La tabla de precios es la siguiente:
+            Valor hora carro = 1000
+            Valor hora moto = 500
+            valor día carro = 8000
+            valor día moto = 4000
+        </li>
+        <li>
+            Las motos que tengan un cilindraje mayor a 500 CC paga 2000 de mas al valor total.
+        </li>
+        <li>
+            Cuando sale un carro del parqueadero se cobra por horas si permaneció menos de 9 horas en el parqueadero, de lo contrario se cobra por días.
+        </li>
+        <li>
+            El valor del día comienza entre las 9 horas de parqueo y finaliza pasadas 24 horas de parqueo.
+        </li>
+    </ul>
+  <div>
+    <app-consulta-tiquetes></app-consulta-tiquetes>
+    <app-registro-tiquete></app-registro-tiquete>
+  </div>
+  <app-pie-pagina></app-pie-pagina>
+  <router-outlet></router-outlet>
+  

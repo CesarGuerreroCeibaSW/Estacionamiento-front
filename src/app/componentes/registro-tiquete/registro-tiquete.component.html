@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col s2">
+      </div>
+      <div class="col s6">
+        <h3>Ingreso al estacionamiento:</h3>
+        <div class="card">
+          <div class="card-content">
+            <form [formGroup]="todoForm">
+              <div class="input-field col-s12">
+                <p>Tipo de vehiculo <strong style="color:Red;">*</strong></p>
+                <select class="custom-select form-control-alternative" id="geTipoVehiculo" #tipoVehiculo
+                  formControlName="tipoVehiculo"  style ="display: block">
+                  <option selected value="">Seleccione</option>
+                  <option *ngFor="let tipo of tipos" [value]="tipo.value.id">{{tipo.value.name}}</option>
+                </select>
+              </div>
+              <div class="input-field col-s12">
+                <p>Placa <strong style="color:Red;">*</strong></p>
+                <input type="text" id="placa" [(ngModel)]="tiquete.placa" pInputText placeholder="Placa"
+                  class="form-control" maxlength="9" (keyup)="validarTexto()" formControlName="placa">
+              </div>
+              <div class="input-field col-s12" *ngIf="cilindraje">
+                <p>Cilindraje <strong style="color:Red;">*</strong></p>
+                <input type="checkbox" id="cilindrajeMayor500" #cilindrajeMayor500 [(ngModel)]="tiquete.cilindrajeMayor500" pInputText placeholder="Cilindraje"
+                  class="form-control" maxlength="4" formControlName="cilindrajeMayor500"> Cilindraje mayor de 499 cc?
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" id="btnRegister" [disabled]="todoForm.invalid"
+                    (click)="registrarTiquete()">Registrar
+                    Entrada</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
