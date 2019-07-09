@@ -1,32 +1,25 @@
-<h2 style="text-align: center">Vehiculos en el estacionamiento</h2>
-<h4 style="text-align: center"> Hoy {{fecha | date: 'dd'}}/{{fecha | date:'MM'}}/{{fecha | date: 'yyyy'}} a las
-  {{fecha | date: 'HH'}}
-  : {{fecha | date: 'mm'}} </h4>
-
-  <button class="btn" (click)="listarTiquetes()">
-    Refrescar</button>
+<h2 class="pt-2" style="text-align: center">Estacionamiento actual</h2>
+<button class="btn btn-primary" (click)="listarTiquetes()">
+  Refrescar</button>
 <div class="container">
-  <div class="row">
-    <div class="col s12">
-      <p-table [value]="tiquetes">
-        <ng-template pTemplate="header">
+      <p-table [value]="tiquetes" class="table">
+        <ng-template pTemplate="header" class="thead-dark">
           <tr>
-            <th>PLACA</th>
-            <th>TIPO DE VEHICULO</th>
-            <th>FECHA DE ENTRADA</th>
-            <th>DAR SALIDA</th>
+            <th scope="col">PLACA</th>
+            <th scope="col">TIPO VEHICULO</th>
+            <th scope="col">FECHA DE INGRESO</th>
+            <th scope="col">ACCIÓN</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-tiquete>
           <tr>
-            <td id="{{tiquete.placa}}" >{{tiquete.placa}}</td>
+            <td scope="row" id="{{tiquete.placa}}" >{{tiquete.placa}}</td>
             <td id="{{tiquete.tipoVehiculo}}">{{tiquete.tipoVehiculo}}</td>
             <td id="{{tiquete.fechaEntrada}}">{{tiquete.fechaEntrada}}</td>
-            <td><button class="btn" id="btnExit{{tiquete.placa}}" (click)="registrarSalidaTicket(tiquete.placa)">
+            <td><button class="btn btn-primary" id="btnExit{{tiquete.placa}}" (click)="registrarSalidaTicket(tiquete.placa)">
                 Salida</button></td>
           </tr>
         </ng-template>
       </p-table>
-    </div>
-  </div>
 </div>
+

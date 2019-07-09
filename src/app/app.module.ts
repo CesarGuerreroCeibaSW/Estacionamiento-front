@@ -16,6 +16,7 @@ import { InputTextareaModule, PanelModule } from 'primeng/primeng';
 import { DropdownModule} from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { MessageModule } from 'primeng/message';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MessageModule } from 'primeng/message';
     RegistroTiqueteComponent,
   ],
   imports: [
+    AccordionModule.forRoot(),  
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
