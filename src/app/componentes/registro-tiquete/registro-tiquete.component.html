@@ -17,7 +17,7 @@
               </div>
               <div class="input-field col-s12">
                 <p>Placa <strong style="color:Red;">*</strong></p>
-                <input type="text" id="placa" [(ngModel)]="tiquete.placa" pInputText placeholder="Placa"
+                <input type="text" id="placa" [(ngModel)]="tiquete.placa" pInputText placeholder="Placa" #placa
                   class="form-control" maxlength="9" (keyup)="validarTexto()" formControlName="placa">
               </div>
               <div class="input-field col-s12" *ngIf="cilindraje">
